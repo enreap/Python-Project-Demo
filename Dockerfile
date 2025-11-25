@@ -5,7 +5,7 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-# Install OS dependencies for pyttsx3 (needs espeak)
+# Install OS dependencies needed for pyttsx3
 RUN apt-get update && apt-get install -y \
     espeak \
     libespeak-ng1 \
@@ -17,5 +17,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python", "app.py"]
+CMD ["python", "Jarvis/jarvis.py"]
 
