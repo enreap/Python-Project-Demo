@@ -14,8 +14,11 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install flask
 
 COPY . .
 
-CMD ["python", "Jarvis/jarvis.py"]
+EXPOSE 8080
+
+CMD ["python", "Jarvis/web_server.py"]
 
