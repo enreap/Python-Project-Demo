@@ -7,6 +7,7 @@ import os
 import random
 import pyautogui
 import pyjokes
+from typing import Optional
 
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
@@ -67,7 +68,7 @@ def screenshot() -> None:
     speak(f"Screenshot saved as {img_path}.")
     print(f"Screenshot saved as {img_path}.")
 
-def takecommand() -> str:
+def takecommand() -> Optional[str]:
     """Takes microphone input from the user and returns it as text."""
     r = sr.Recognizer()
     with sr.Microphone() as source:
